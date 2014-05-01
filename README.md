@@ -94,16 +94,15 @@ See also [Typetalk for Developers](http://developers.typetalk.in/index.html)
     });
 
 ## Sample App using typetalk-js library
-[typetalk notifications](https://github.com/shoito/typetalk-notifications)
+
+- [Typetalk Notifications](https://github.com/shoito/typetalk-notifications)
 
 ## See also
-[Typetalk](http://www.typetalk.in)
 
-[Typetalk for Developers](http://developers.typetalk.in/)
-
-[JavaScript Promises: There and Back Again](http://www.html5rocks.com/en/tutorials/es6/promises/)
-
-[Promise](https://www.promisejs.org/)
+- [Typetalk](http://www.typetalk.in)
+- [Typetalk for Developers](http://developers.typetalk.in/)
+- [JavaScript Promises: There and Back Again](http://www.html5rocks.com/en/tutorials/es6/promises/)
+- [Promise](https://www.promisejs.org/)
 
 ## License
 MIT License - http://opensource.org/licenses/MIT
