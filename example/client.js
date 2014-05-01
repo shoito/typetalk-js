@@ -1,5 +1,5 @@
 var Promise = require('bluebird'),
-    Typetalk = require('../src/typetalk');
+    Typetalk = require('../typetalk');
 
 var typetalk = new Typetalk({
     'client_id': 'YOUR_CLIENT_ID__CLIENT_CREDENTIALS', 

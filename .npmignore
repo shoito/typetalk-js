@@ -5,6 +5,7 @@
 /.gitattributes
 /.travis.yml
 
-/dist
+/example
+/node_modules
 /test
 /Gruntfile.js

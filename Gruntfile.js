@@ -8,25 +8,14 @@ module.exports = function(grunt) {
 
         clean: {
             dist: {
-                src: ['dist/**/*']
+                src: ['typetalk.min.js']
             },
         },
 
         jshint: {
-            files: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+            files: ['gruntfile.js', 'typetalk.js', 'test/**/*.js'],
             options: {
                 jshintrc: '.jshintrc'
-            }
-        },
-
-        copy: {
-            dist: {
-                cwd: 'src/',
-                src: '**',
-                dest: 'dist/',
-                expand: true,
-                flatten: true,
-                filter: 'isFile'
             }
         },
 
@@ -35,8 +24,8 @@ module.exports = function(grunt) {
                 banner: '/*! typetalk-js <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             dist: {
-                src: 'src/<%= fileName %>.js',
-                dest: 'dist/<%= fileName %>.min.js'
+                src: '<%= fileName %>.js',
+                dest: '<%= fileName %>.min.js'
             }
         },
 
@@ -46,5 +35,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['clean', 'jshint', 'copy', 'uglify']);
+    grunt.registerTask('default', ['clean', 'jshint', 'uglify']);
 };

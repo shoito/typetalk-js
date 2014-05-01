@@ -1,11 +1,5 @@
 .env.json
 .tmp
 
-dist
-temp
-
-.sass-cache
-
-package
 node_modules
 components

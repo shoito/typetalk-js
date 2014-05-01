@@ -1,7 +1,7 @@
 {
   "name": "typetalk-js",
-  "version": "0.1.0",
-  "main": "dist/typetalk.js",
+  "version": "0.1.1",
+  "main": "typetalk.js",
   "ignore": [
     "**/.*",
     "**/*.txt",
@@ -9,7 +9,6 @@
     "components/",
     "example/",
     "node_modules/",
-    "src/",
     "test/",
     "AUTHORS.txt",
     "component.json",
