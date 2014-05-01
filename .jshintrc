@@ -1,0 +1,32 @@
+{
+    "node": true,
+    "browser": true,
+    "esnext": true,
+    "expr": true,
+    "bitwise": true,
+    "camelcase": false,
+    "curly": true,
+    "eqeqeq": true,
+    "forin": true,
+    "immed": true,
+    "indent": 4,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "quotmark": "single",
+    "regexp": true,
+    "undef": true,
+    "unused": true,
+    "strict": true,
+    "trailing": true,
+    "shadow": true,
+    "smarttabs": true,
+    "sub": true,
+    "validthis": true,
+    "globals" : {
+        "Typetalk": true,
+        "chrome": true,
+        "Promise": true,
+        "XMLHttpRequest": true
+    }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "typetalk-js",
+  "title": "typetalk-js",
+  "description": "JavaScript library for Typetalk",
+  "version": "0.1.0",
+  "main": "dist/typetalk.js",
+  "homepage": "https://github.com/shoito/typetalk-js",
+  "author": {
+    "name": "shoito",
+    "url": "https://github.com/shoito/typetalk-js/blob/master/AUTHORS.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoito/typetalk-js.git"
+  },
+  "keywords": [
+    "typetalk",
+    "nulab",
+    "client",
+    "javascript",
+    "library"
+  ],
+  "bugs": {
+    "url": "https://github.com/shoito/typetalk-js/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/shoito/typetalk-js/blob/master/LICENSE"
+    }
+  ],
+  "dependencies": {
+    "bluebird": "~1.2.4",
+    "xmlhttprequest": "~1.6.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-compare-size": "~0.4.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-git-authors": "~1.2.0",
+    "grunt-jsonlint": "~1.0.4",
+    "gzip-js": "~0.3.2",
+    "load-grunt-tasks": "~0.4.0",
+    "matchdep": "~0.3.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.5.0"
+  },
+  "scripts": {
+    "build": "npm install && grunt",
+    "start": "grunt watch",
+    "test": "grunt"
+  }
+}

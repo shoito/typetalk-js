@@ -1,0 +1,25 @@
+{
+  "name": "typetalk-js",
+  "version": "0.1.0",
+  "main": "dist/typetalk.js",
+  "ignore": [
+    "**/.*",
+    "**/*.txt",
+    "**/*.md",
+    "components/",
+    "dist/",
+    "example/",
+    "node_modules/",
+    "test/",
+    "AUTHORS.txt",
+    "component.json",
+    "Gruntfile.js",
+    "LICENSE",
+    "package.json"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "bluebird": "~1.2.4"
+  }
+}
