@@ -18,14 +18,6 @@ Support Promises
 
 [Can I use Promises?](http://caniuse.com/promises)
 
-### Node.js
-
-    npm install bluebird
-
-Then:
-
-    var Promise = require('promise');
-
 ### Browser
 
 Use a polyfill script tag:
@@ -38,10 +30,15 @@ The global variable Promise becomes available after the above script tag.
 
 ### Node.js
 
-    npm install typetalk-js
+    npm install typetalk-js --save
 
 ### Browser
-Clone the repository or just copy the files typetalk.js or typetalk.min.js to your server and then include it in your pages with `<script src="typetalk.js"></script>`
+
+    bower install typetalk-js --save
+
+or clone the repository or just copy the files `typetalk.js` or `typetalk.min.js` to your server.
+
+and then include it in your pages with `<script src="typetalk.min.js"></script>`
 
 ## Getting started
 
