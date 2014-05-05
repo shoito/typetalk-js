@@ -32,8 +32,20 @@ module.exports = function(grunt) {
         watch: {
             files: ['<%= jshint.files %>'],
             tasks: ['jshint']
+        },
+
+        jsdoc : {
+            dist : {
+                src: ['typetalk.js', 'README.md'],
+                options: {
+                    dest: 'doc',
+                    configure: 'jsdoc-config.json',
+                }
+            }
         }
     });
 
     grunt.registerTask('default', ['clean', 'jshint', 'uglify']);
+
+    grunt.registerTask('build', ['default', 'jsdoc']);
 };
