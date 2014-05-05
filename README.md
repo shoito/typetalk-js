@@ -5,6 +5,8 @@ JavaScript library for Typetalk
 
 For API details and how to use promises, see the [JavaScript Promises](http://www.html5rocks.com/en/tutorials/es6/promises/).
 
+typetalk-js is an **unofficial** library.
+
 ## Typetalk
 Typetalk - http://www.typetalk.in
 
@@ -42,7 +44,10 @@ and then include it in your pages with `<script src="typetalk.min.js"></script>`
 
 ## Getting started
 
-See also [Typetalk for Developers](http://developers.typetalk.in/index.html)
+See also 
+
+- [Typetalk for Developers](http://developers.typetalk.in/index.html)
+- [typetalk-js API documentation](http://shoito.github.io/typetalk-js/Typetalk.html)
 
 ### Setup (Client Credentials as Grant Type)
 
