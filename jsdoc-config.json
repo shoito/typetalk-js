@@ -1,0 +1,27 @@
+{
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles" : true
+    },
+    "systemName": "typetalk-js",
+    "footer": "",
+    "copyright": "Developed by @shoito",
+    "navType": "vertical",
+    "theme": "readable",
+    "linenums": false,
+    "collapseSymbols": false,
+    "inverseNav": true,
+  },
+  "markdown": {
+    "parser": "gfm",
+    "hardwrap": true
+  },
+  "opts": {
+    "template": "node_modules/grunt-jsdoc/node_modules/ink-docstrap/template"
+  }
+}
