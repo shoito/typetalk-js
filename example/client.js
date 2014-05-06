@@ -5,7 +5,8 @@ var Promise = require('bluebird'),
 
 var typetalk = new Typetalk({
     'client_id': 'YOUR_CLIENT_ID__CLIENT_CREDENTIALS', 
-    'client_secret': 'YOUR_CLIENT_SECRET__CLIENT_CREDENTIALS'
+    'client_secret': 'YOUR_CLIENT_SECRET__CLIENT_CREDENTIALS',
+    'scope': 'my'
 });
 
 typetalk.getAccessTokenUsingClientCredentials().then(function(data) {

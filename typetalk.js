@@ -21,16 +21,16 @@ if (typeof window === 'undefined') {
             clientId,
             clientSecret,
             redirectUri,
-            scope = 'topic.read,topic.post,my';
+            scope = 'topic.read';
 
         /**
          * Typetalk API client
          * @global
          * @class Typetalk
-         * @param {Object} options - API parameters
-         * @param {String} options.client_id - client id
-         * @param {String} options.client_secret - client secret
-         * @param {String} [options.scope=topic.read,topic.post,my] - scope
+         * @param {Object} [options] - API parameters
+         * @param {String} [options.client_id] - client id
+         * @param {String} [options.client_secret] - client secret
+         * @param {String} [options.scope=topic.read] - scope
          * @param {String} [options.redirect_uri] - redirect uri
          * @param {String} [options.access_token] - access token
          * @param {String} [options.refresh_token] - refresh token
@@ -38,13 +38,8 @@ if (typeof window === 'undefined') {
          * @see {@link http://developers.typetalk.in/oauth.html}
          */
         function Typetalk(options) {
-            ['client_id', 'client_secret'].forEach(function(field) {
-                if (typeof options[field] === 'undefined') {
-                    throw new Error(field + ' is required');
-                }
-            });
-
             self = this;
+            options = options || {};
             self.accessToken = options.access_token;
             self.refreshToken = options.refresh_token;
             self.timeout = options.timeout || 3000;
@@ -123,18 +118,23 @@ if (typeof window === 'undefined') {
          * Starts an auth flow at the typetalk oauth2 URL.
          * @memberof Typetalk
          * @method
+         * @param {Object} [options] - oAuth2 parameters
+         * @param {String} [options.client_id] - client id
+         * @param {String} [options.scope] - scope
+         * @param {String} [options.redirect_uri] - redirect uri
          * @return {Promise} promise object - It will resolve with `response` data or fail with `error` object
          */
-        Typetalk.prototype.authorizeChromeApp = function() {
+        Typetalk.prototype.authorizeChromeApp = function(options) {
+            options = options || {};
             return new Promise(function(resolve, reject) {
                 if (!(chrome && chrome.identity)) {
                     reject(new Error('chrome.identity API is unsupported'));
                     return;
                 }
 
-                var authorizeUrl = Typetalk.OAUTH_BASE_URL + 'authorize?client_id=' + encodeURIComponent(clientId) +
-                                '&redirect_uri=' + encodeURIComponent(redirectUri) +
-                                '&scope=' + encodeURIComponent(scope) + '&response_type=code';
+                var authorizeUrl = Typetalk.OAUTH_BASE_URL + 'authorize?client_id=' + encodeURIComponent(clientId || options.client_id) +
+                                '&redirect_uri=' + encodeURIComponent(redirectUri || options.redirect_uri) +
+                                '&scope=' + encodeURIComponent(scope || options.scope) + '&response_type=code';
                 chrome.identity.launchWebAuthFlow(
                     {'url': authorizeUrl, 'interactive': true},
                     function(responseUrl) {
@@ -193,14 +193,19 @@ if (typeof window === 'undefined') {
          * Get access token using authorization code
          * @memberof Typetalk
          * @method
+         * @param {Object} [options] - oAuth2 parameters
+         * @param {String} [options.client_id] - client id
+         * @param {String} [options.client_secret] - client secret
+         * @param {String} [options.scope] - scope
          * @return {Promise} promise object - It will resolve with `response` data or fail with `error` object
          * @see {@link http://developers.typetalk.in/oauth.html#client}
          */
-        Typetalk.prototype.getAccessTokenUsingClientCredentials = function() {
-            var param = 'client_id=' + encodeURIComponent(clientId) +
-                        '&client_secret=' + encodeURIComponent(clientSecret) +
+        Typetalk.prototype.getAccessTokenUsingClientCredentials = function(options) {
+            options = options || {};
+            var param = 'client_id=' + encodeURIComponent(clientId || options.client_id) +
+                        '&client_secret=' + encodeURIComponent(clientSecret || options.client_secret) +
                         '&grant_type=client_credentials' +
-                        '&scope=' + encodeURIComponent(scope);
+                        '&scope=' + encodeURIComponent(scope || options.scope);
             return requestAccessToken(param);
         };
 
@@ -208,12 +213,17 @@ if (typeof window === 'undefined') {
          * Redirect users to request Typetalk access
          * @memberof Typetalk
          * @method
+         * @param {Object} [options] - oAuth2 parameters
+         * @param {String} [options.client_id] - client id
+         * @param {String} [options.scope] - scope
+         * @param {String} [options.redirect_uri] - redirect uri
          * @see {@link http://developers.typetalk.in/oauth.html#code}
          */
-        Typetalk.prototype.requestAuthorization = function() {
-            var param = 'client_id=' + encodeURIComponent(clientId) +
-                        '&redirect_uri=' + encodeURIComponent(redirectUri) +
-                        '&scope=' + encodeURIComponent(scope) +
+        Typetalk.prototype.requestAuthorization = function(options) {
+            options = options || {};
+            var param = 'client_id=' + encodeURIComponent(clientId || options.client_id) +
+                        '&redirect_uri=' + encodeURIComponent(redirectUri || options.redirect_uri) +
+                        '&scope=' + encodeURIComponent(scope || options.scope) +
                         '&response_type=code';
             location.href = Typetalk.OAUTH_BASE_URL + 'authorize?' + param;
         };
@@ -222,13 +232,18 @@ if (typeof window === 'undefined') {
          * Get an access token using authorization code
          * @memberof Typetalk
          * @method
+         * @param {Object} [options] - oAuth2 parameters
+         * @param {String} [options.client_id] - client id
+         * @param {String} [options.client_secret] - client secret
+         * @param {String} [options.redirect_uri] - redirect uri
          * @return {Promise} promise object - It will resolve with `response` data or fail with `error` object
          * @see {@link http://developers.typetalk.in/oauth.html#code}
          */
-        Typetalk.prototype.getAccessTokenUsingAuthorizationCode = function(code) {
-            var param = 'client_id=' + encodeURIComponent(clientId) +
-                        '&client_secret=' + encodeURIComponent(clientSecret) +
-                        '&redirect_uri=' + encodeURIComponent(redirectUri) +
+        Typetalk.prototype.getAccessTokenUsingAuthorizationCode = function(code, options) {
+            options = options || {};
+            var param = 'client_id=' + encodeURIComponent(clientId || options.client_id) +
+                        '&client_secret=' + encodeURIComponent(clientSecret || options.client_secret) +
+                        '&redirect_uri=' + encodeURIComponent(redirectUri || options.redirect_uri) +
                         '&grant_type=authorization_code' +
                         '&code=' + encodeURIComponent(code);
             return requestAccessToken(param);
@@ -238,15 +253,19 @@ if (typeof window === 'undefined') {
          * Get an access token using authorization code
          * @memberof Typetalk
          * @method
-         * @param {?String} refreshToken - your refresh token
+         * @param {Object} [options] - oAuth2 parameters and refresh token
+         * @param {String} [options.client_id] - client id
+         * @param {String} [options.client_secret] - client secret
+         * @param {String} [options.refresh_token] - refresh token
          * @return {Promise} promise object - It will resolve with `response` data or fail with `error` object
          * @see {@link http://developers.typetalk.in/oauth.html#refresh}
          */
-        Typetalk.prototype.refreshAccessToken = function(refreshToken) {
-            var param = 'client_id=' + encodeURIComponent(clientId) +
-                        '&client_secret=' + encodeURIComponent(clientSecret) +
+        Typetalk.prototype.refreshAccessToken = function(options) {
+            options = options || {};
+            var param = 'client_id=' + encodeURIComponent(clientId || options.client_id) +
+                        '&client_secret=' + encodeURIComponent(clientSecret || options.client_secret) +
                         '&grant_type=refresh_token' +
-                        '&refresh_token=' + encodeURIComponent(refreshToken || self.refreshToken);
+                        '&refresh_token=' + encodeURIComponent(self.refreshToken || options.refresh_token);
             return requestAccessToken(param);
         };
 
@@ -277,10 +296,10 @@ if (typeof window === 'undefined') {
          * @memberof Typetalk
          * @method
          * @param {Number} topicId - Topic ID
-         * @param {?Object} options - Query parameters
-         * @param {?Number} options.count - default value: 20, maximum: 100
-         * @param {?Number} options.from - references Post ID
-         * @param {?String} options.direction - "backward" or "forward"
+         * @param {Object} [options] - Query parameters
+         * @param {Number} [options.count] - default value: 20, maximum: 100
+         * @param {Number} [options.from] - references Post ID
+         * @param {String} [options.direction] - "backward" or "forward"
          * @return {Promise} promise object - It will resolve with `response` data or fail with `error` object
          * @see {@link http://developers.typetalk.in/api.html#get-messages}
          */
@@ -294,10 +313,10 @@ if (typeof window === 'undefined') {
          * @method
          * @param {Number} topicId - Topic ID
          * @param {String} message - your message, maximum length: 4096
-         * @param {?Object} options - Form parameters
-         * @param {?Number} options.replyTo - references Post ID
-         * @param {?String} options.fileKeys[0-5] - attachment file key, maximum count: 5
-         * @param {?Number} options.talkIds[0-5] - Talk IDs that you want to put the message in, maximum count: 5
+         * @param {Object} [options] - Form parameters
+         * @param {Number} [options.replyTo] - references Post ID
+         * @param {String} [options.fileKeys[0-5]] - attachment file key, maximum count: 5
+         * @param {Number} [options.talkIds[0-5]] - Talk IDs that you want to put the message in, maximum count: 5
          * @return {Promise} promise object - It will resolve with `response` data or fail with `error` object
          * @see {@link http://developers.typetalk.in/api.html#post-message}
          */
@@ -446,8 +465,8 @@ if (typeof window === 'undefined') {
          * @memberof Typetalk
          * @method
          * @param {Number} topicId - Topic ID
-         * @param {?Object} options - Form parameters
-         * @param {?Number} options.postId - Post ID ( if no parameter, read all posts )
+         * @param {Object} [options] - Form parameters
+         * @param {Number} [options.postId] - Post ID ( if no parameter, read all posts )
          * @return {Promise} promise object - It will resolve with `response` data or fail with `error` object
          * @see {@link http://developers.typetalk.in/api.html#open-notification}
          */
@@ -461,9 +480,9 @@ if (typeof window === 'undefined') {
          * Get mention list
          * @memberof Typetalk
          * @method
-         * @param {?Object} options - Form parameters
-         * @param {?Number} options.from - Mention ID
-         * @param {?Boolean} options.unread - true: only unread mentions, false: all mentions
+         * @param {Object} [options] - Form parameters
+         * @param {Number} [options.from] - Mention ID
+         * @param {Boolean} [options.unread] - true: only unread mentions, false: all mentions
          * @return {Promise} promise object - It will resolve with `response` data or fail with `error` object
          * @see {@link http://developers.typetalk.in/api.html#get-mentions}
          */
