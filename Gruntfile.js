@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 
         uglify: {
             options: {
-                banner: '/*! typetalk-js <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+                banner: '// typetalk-js v<%= pkg.version %>\n// License: MIT\n'
             },
             dist: {
                 src: '<%= fileName %>.js',
