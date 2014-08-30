@@ -1,4 +1,4 @@
-JavaScript library for Typetalk
+JavaScript client library for Typetalk
 ======================
 
 [typetalk-js](https://github.com/shoito/typetalk-js) aims to provide a complete, asynchronous client library for the [Typetalk API](http://developers.typetalk.in/api.html).
@@ -24,7 +24,7 @@ Support Promises
 
 Use a polyfill script tag:
 
-    <script src="https://www.promisejs.org/polyfills/promise-4.0.0.js"></script>
+    <script src="https://www.promisejs.org/polyfills/promise-5.0.0.min.js"></script>
 
 The global variable Promise becomes available after the above script tag.
 
@@ -46,7 +46,7 @@ and then include it in your pages with `<script src="typetalk.min.js"></script>`
 
 See also 
 
-- [Typetalk for Developers](http://developers.typetalk.in/index.html)
+- [Typetalk for Developers](https://developer.nulab-inc.com/docs/typetalk)
 - [typetalk-js API documentation](http://shoito.github.io/typetalk-js/Typetalk.html)
 
 ### Setup (Client Credentials as Grant Type)
@@ -56,7 +56,7 @@ See also
     var typetalk = new Typetalk({
         'client_id': 'YOUR_CLIENT_ID__CLIENT_CREDENTIALS', 
         'client_secret': 'YOUR_CLIENT_SECRET__CLIENT_CREDENTIALS',
-        'scope': 'topic.read,topic.post,my'
+        'scope': 'topic.read,topic.post,topic.write,topic.delete,my'
     });
 
 ### Setup (Authorization Code as Grant Type)
@@ -65,7 +65,7 @@ See also
         'client_id': 'YOUR_CLIENT_ID__AUTHORIZATION_CODE',
         'client_secret': 'YOUR_CLIENT_SECRET__AUTHORIZATION_CODE',
         'redirect_uri': 'https://YOUR_APP_DOMAIN/provider_cb',
-        'scope': 'topic.read,topic.post,my'
+        'scope': 'topic.read,topic.post,topic.write,topic.delete,my'
     });
 
 ### Get access token using client credentials
@@ -102,7 +102,7 @@ See also
 ## See also
 
 - [Typetalk](http://www.typetalk.in)
-- [Typetalk for Developers](http://developers.typetalk.in/)
+- [Typetalk for Developers](https://developer.nulab-inc.com/docs/typetalk/)
 - [JavaScript Promises: There and Back Again](http://www.html5rocks.com/en/tutorials/es6/promises/)
 - [Promise](https://www.promisejs.org/)
 

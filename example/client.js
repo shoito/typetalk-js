@@ -1,6 +1,6 @@
 // Setup
 // npm install typetalk-js --save
-var Promise = require('bluebird'),
+var Promise = require('promise'),
     Typetalk = require('typetalk-js');
 
 var typetalk = new Typetalk({
