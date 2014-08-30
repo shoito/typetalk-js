@@ -1,197 +1,345 @@
 <!DOCTYPE html>
-<html>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="typetalk-js : Typetalk JavaScript Client Library - unofficial" />
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>typetalk-js Index</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
 
-    <title>typetalk-js</title>
-  </head>
+	<link type="text/css" rel="stylesheet" href="styles/site.readable.css">
 
-  <body>
+</head>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/shoito/typetalk-js">View on GitHub</a>
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">typetalk-js</a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
 
-          <h1 id="project_title">typetalk-js</h1>
-          <h2 id="project_tagline">Typetalk JavaScript Client Library - unofficial</h2>
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="Typetalk.html">Typetalk</a>
+						</li>
+						
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/shoito/typetalk-js/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/shoito/typetalk-js/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="javascript-library-for-typetalk" class="anchor" href="#javascript-library-for-typetalk"><span class="octicon octicon-link"></span></a>JavaScript library for Typetalk</h1>
+	<div class="row-fluid">
 
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	
+	<span class="page-title">Index</span>
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    <section class="readme-section">
+        <article><h1>JavaScript client library for Typetalk</h1>
 <p><a href="https://github.com/shoito/typetalk-js">typetalk-js</a> aims to provide a complete, asynchronous client library for the <a href="http://developers.typetalk.in/api.html">Typetalk API</a>.</p>
-
 <p>For API details and how to use promises, see the <a href="http://www.html5rocks.com/en/tutorials/es6/promises/">JavaScript Promises</a>.</p>
-
 <p>typetalk-js is an <strong>unofficial</strong> library.</p>
-
-<h2>
-<a name="typetalk" class="anchor" href="#typetalk"><span class="octicon octicon-link"></span></a>Typetalk</h2>
-
+<h2>Typetalk</h2>
 <p>Typetalk - <a href="http://www.typetalk.in">http://www.typetalk.in</a></p>
-
 <blockquote>
 <p>Typetalk: Team discussions and collaboration through instant messaging.</p>
-
 <p>Typetalk brings fun and ease to team discussions through instant messaging on desktop and mobile devices.</p>
 </blockquote>
-
-<h2>
-<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
-
+<h2>Requirements</h2>
 <p>Support Promises</p>
-
 <p><a href="http://caniuse.com/promises">Can I use Promises?</a></p>
-
-<h3>
-<a name="browser" class="anchor" href="#browser"><span class="octicon octicon-link"></span></a>Browser</h3>
-
+<h3>Browser</h3>
 <p>Use a polyfill script tag:</p>
-
-<pre><code>&lt;script src="https://www.promisejs.org/polyfills/promise-4.0.0.js"&gt;&lt;/script&gt;
-</code></pre>
-
+<pre><code>&lt;script src=&quot;https://www.promisejs.org/polyfills/promise-5.0.0.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 <p>The global variable Promise becomes available after the above script tag.</p>
-
-<h2>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
-
-<h3>
-<a name="nodejs" class="anchor" href="#nodejs"><span class="octicon octicon-link"></span></a>Node.js</h3>
-
-<pre><code>npm install typetalk-js --save
-</code></pre>
-
-<h3>
-<a name="browser-1" class="anchor" href="#browser-1"><span class="octicon octicon-link"></span></a>Browser</h3>
-
-<pre><code>bower install typetalk-js --save
-</code></pre>
-
+<h2>Installation</h2>
+<h3>Node.js</h3>
+<pre><code>npm install typetalk-js --save</code></pre>
+<h3>Browser</h3>
+<pre><code>bower install typetalk-js --save</code></pre>
 <p>or clone the repository or just copy the files <code>typetalk.js</code> or <code>typetalk.min.js</code> to your server.</p>
-
-<p>and then include it in your pages with <code>&lt;script src="typetalk.min.js"&gt;&lt;/script&gt;</code></p>
-
-<h2>
-<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting started</h2>
-
+<p>and then include it in your pages with <code>&lt;script src=&quot;typetalk.min.js&quot;&gt;&lt;/script&gt;</code></p>
+<h2>Getting started</h2>
 <p>See also </p>
-
 <ul>
-<li><a href="http://developers.typetalk.in/index.html">Typetalk for Developers</a></li>
+<li><a href="https://developer.nulab-inc.com/docs/typetalk">Typetalk for Developers</a></li>
 <li><a href="http://shoito.github.io/typetalk-js/Typetalk.html">typetalk-js API documentation</a></li>
-</ul><h3>
-<a name="setup-client-credentials-as-grant-type" class="anchor" href="#setup-client-credentials-as-grant-type"><span class="octicon octicon-link"></span></a>Setup (Client Credentials as Grant Type)</h3>
-
+</ul>
+<h3>Setup (Client Credentials as Grant Type)</h3>
 <pre><code>var Typetalk = require('typetalk');
 
 var typetalk = new Typetalk({
     'client_id': 'YOUR_CLIENT_ID__CLIENT_CREDENTIALS', 
     'client_secret': 'YOUR_CLIENT_SECRET__CLIENT_CREDENTIALS',
-    'scope': 'topic.read,topic.post,my'
-});
-</code></pre>
-
-<h3>
-<a name="setup-authorization-code-as-grant-type" class="anchor" href="#setup-authorization-code-as-grant-type"><span class="octicon octicon-link"></span></a>Setup (Authorization Code as Grant Type)</h3>
-
+    'scope': 'topic.read,topic.post,topic.write,topic.delete,my'
+});</code></pre>
+<h3>Setup (Authorization Code as Grant Type)</h3>
 <pre><code>var typetalk = new Typetalk({
     'client_id': 'YOUR_CLIENT_ID__AUTHORIZATION_CODE',
     'client_secret': 'YOUR_CLIENT_SECRET__AUTHORIZATION_CODE',
     'redirect_uri': 'https://YOUR_APP_DOMAIN/provider_cb',
-    'scope': 'topic.read,topic.post,my'
-});
-</code></pre>
-
-<h3>
-<a name="get-access-token-using-client-credentials" class="anchor" href="#get-access-token-using-client-credentials"><span class="octicon octicon-link"></span></a>Get access token using client credentials</h3>
-
+    'scope': 'topic.read,topic.post,topic.write,topic.delete,my'
+});</code></pre>
+<h3>Get access token using client credentials</h3>
 <pre><code>typetalk.getAccessTokenUsingClientCredentials().then(function(data) {
     typetalk.accessToken = data.access_token;
     typetalk.refreshToken = data.refresh_token;
 }, function(err) {
     console.error(err);
-});
-</code></pre>
-
-<h3>
-<a name="get-my-profile" class="anchor" href="#get-my-profile"><span class="octicon octicon-link"></span></a>Get my profile</h3>
-
+});</code></pre>
+<h3>Get my profile</h3>
 <pre><code>typetalk.getMyProfile().then(function(profile) {
     console.log(profile);
-});
-</code></pre>
-
-<h3>
-<a name="get-my-topics" class="anchor" href="#get-my-topics"><span class="octicon octicon-link"></span></a>Get my topics</h3>
-
+});</code></pre>
+<h3>Get my topics</h3>
 <pre><code>typetalk.getMyTopics().then(function(topics) {
     console.log(topics);
-});
-</code></pre>
-
-<h3>
-<a name="post-message" class="anchor" href="#post-message"><span class="octicon octicon-link"></span></a>Post message</h3>
-
+});</code></pre>
+<h3>Post message</h3>
 <pre><code>typetalk.postMessage(1657, {'message': '@shoito Hellow World!'}).then(function(message) {
     console.log(message);
-});
-</code></pre>
-
-<h2>
-<a name="sample-app-using-typetalk-js-library" class="anchor" href="#sample-app-using-typetalk-js-library"><span class="octicon octicon-link"></span></a>Sample App using typetalk-js library</h2>
-
+});</code></pre>
+<h2>Sample App using typetalk-js library</h2>
 <ul>
 <li><a href="https://github.com/shoito/typetalk-notifications">Typetalk Notifications</a></li>
-</ul><h2>
-<a name="see-also" class="anchor" href="#see-also"><span class="octicon octicon-link"></span></a>See also</h2>
-
+</ul>
+<h2>See also</h2>
 <ul>
 <li><a href="http://www.typetalk.in">Typetalk</a></li>
-<li><a href="http://developers.typetalk.in/">Typetalk for Developers</a></li>
+<li><a href="https://developer.nulab-inc.com/docs/typetalk/">Typetalk for Developers</a></li>
 <li><a href="http://www.html5rocks.com/en/tutorials/es6/promises/">JavaScript Promises: There and Back Again</a></li>
 <li><a href="https://www.promisejs.org/">Promise</a></li>
-</ul><h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+</ul>
+<h2>License</h2>
+<p>MIT License - <a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a></p></article>
+    </section>
 
-<p>MIT License - <a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a></p>
-      </section>
+
+
+
+
+
+
+
+	<h1 class="page-title">Index</h1>
+<section>
+
+<header>
+    <h2>
+    typetalk.js
+    </h2>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+            <div class="description"><p>typetalk-js aims to provide a complete, asynchronous client library for the Typetalk API.
+  For API details and how to use promises, see the JavaScript Promises articles.</p></div>
+        
+
+        
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<dt class="tag-author">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>shoito</li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">typetalk-js maintained by <a href="https://github.com/shoito">shoito</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+    
 
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-677679-32");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
-  </body>
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="copyright">
+		Developed by @shoito
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
+		on 2014-08-31T01:02:43+09:00 using the <a
+			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		</span>
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : "100px"
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : false,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
 </html>
