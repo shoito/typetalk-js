@@ -31,7 +31,7 @@
   ],
   "dependencies": {
     "promise": "~5.0.0",
-    "xmlhttprequest": "~1.6.0"
+    "xmlhttprequest": "~1.7.0"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
